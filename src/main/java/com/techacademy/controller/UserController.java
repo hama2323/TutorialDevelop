@@ -57,6 +57,7 @@ public class UserController {
     @GetMapping("/update/{id}/")
     public String getUser(@PathVariable("id") Integer id, Model model) {
         // Modelに登録
+
         model.addAttribute("user", service.getUser(id));
         // User更新画面に遷移
         return "user/update";
@@ -64,11 +65,19 @@ public class UserController {
 
     /** User更新処理 */
     @PostMapping("/update/{id}/")
-    public String postUser(User user) {
-        // User登録
+     public String postUser(@Validated User user, BindingResult res, Model model) {
+       if(res.hasErrors()){
+           // エラーあり
+           return getUser(user);
+       }
         service.saveUser(user);
         // 一覧画面にリダイレクト
         return "redirect:/user/list";
+    }
+
+    private String getUser(User user) {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
     }
 
     /** User削除処理 */
