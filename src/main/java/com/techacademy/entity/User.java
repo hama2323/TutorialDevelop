@@ -50,10 +50,12 @@ public class User {
     /** 年齢 */
     @Min(0)
     @Max(120)
+    @NotNull
     private Integer age;
 
     /** メールアドレス。50桁。null許可 */
     @Column(length = 50)
+    @NotEmpty
     @Email
     @Length(max=50)
     private String email;
