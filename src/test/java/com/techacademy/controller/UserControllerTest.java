@@ -81,6 +81,10 @@ class UserControllerTest {
         List<User> userlist  = (List<User>)result.getModelAndView().getModel().get("userlist");
         assertEquals(userlist.get(0).getId(), 1);
         assertEquals(userlist.get(0).getName(), "キラメキ太郎");
+        assertEquals(userlist.get(1).getId(), 2);
+        assertEquals(userlist.get(1).getName(), "キラメキ次郎");
+        assertEquals(userlist.get(2).getId(), 3);
+        assertEquals(userlist.get(2).getName(), "キラメキ花子");
 
     }
 }
