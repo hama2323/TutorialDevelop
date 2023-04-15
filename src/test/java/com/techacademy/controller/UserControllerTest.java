@@ -7,6 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -75,7 +77,7 @@ class UserControllerTest {
 
         // userの検証
         // Modelからuserを取り出す
-        User List<user>userlist  = (List<User>)result.getModelAndView().getModel().get("userlist");
+        List<User> userlist  = (List<User>)result.getModelAndView().getModel().get("userlist");
         assertEquals(userlist.get(0).getId(), 1);
         assertEquals(userlist.get(0).getName(), "キラメキ太郎");
 
