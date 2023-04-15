@@ -63,6 +63,7 @@ class UserControllerTest {
         assertEquals(user.getName(), "キラメキ太郎");
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     @DisplayName("User更新画面")
     @WithMockUser
